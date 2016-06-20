@@ -1,6 +1,10 @@
 <h1>
     <%= gravatar_for @user %>
     <%= @user.name %>
+    <%= @user.birthday %>
+    <%= @user.introduction %>
+    <%= @user.location%>
+    <%= @user.website %>
     <br>
     <%= link_to "Edit", edit_user_path %>
 </h1>
