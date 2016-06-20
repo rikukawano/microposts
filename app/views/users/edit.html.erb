@@ -8,7 +8,7 @@
             <%= f.text_field :name %>
             
             <%= f.label :birthday %>
-            <%= f.date_select :birthday, start_year: 1900 %>
+            <%= f.date_select :birthday, start_year: 1990 %>
             
             <%= f.label :introduction %>
             <%= f.text_area :introduction %>
@@ -18,6 +18,8 @@
             
             <%= f.label :website %>
             <%= f.text_field :website %>
+            
+            <%= f.submit "Save Edits", class: "btn btn-large btn-primary" %>
         <% end %>
     </div>
 </div>
