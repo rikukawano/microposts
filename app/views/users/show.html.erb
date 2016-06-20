@@ -1,10 +1,17 @@
-<h1>
-    <%= gravatar_for @user %>
-    <%= @user.name %>
-    <%= @user.birthday %>
-    <%= @user.introduction %>
-    <%= @user.location%>
-    <%= @user.website %>
-    <br>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <ol>Birthday: <%= @user.birthday %></ol>
+    <ol>Introduction: <%= @user.introduction %></ol>
+    <ol>Location: <%= @user.location%></ol>
+    <ol>Website: <%= @user.website %></ol>
     <%= link_to "Edit", edit_user_path %>
-</h1>
+  </div>
+</div>
