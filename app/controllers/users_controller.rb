@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
+  before_action :set_params, only: [:show, :edit, :update]
+  before_action :correct_user, only: [:edit, :update]
+  
   def show
-    @user = User.find(params[:id])
   end
   
   def new
     @user = User.new
+    @submit = 'Save'
   end
   
   def create
@@ -18,11 +21,10 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = User.find(params[:id])
+    @submit = 'edit'
   end
   
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to @user
       flash[:success] = "Your Profile has been edited"
@@ -35,5 +37,13 @@ class UsersController < ApplicationController
   
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :birthday, :introduction, :location, :website)
+  end
+  
+  def set_params
+    @user = User.find(params[:id])
+  end
+
+  def correct_user
+    redirect_to root_path if @user != current_user
   end
 end

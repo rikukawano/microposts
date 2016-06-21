@@ -1,25 +1,3 @@
 <h1>Edit Profile</h1>
 
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <%= form_for(@user) do |f| %>
-            <%= render 'shared/error_messages', object: f.object %>
-            <%= f.label :name %>
-            <%= f.text_field :name %>
-            
-            <%= f.label :birthday %>
-            <%= f.date_select :birthday, start_year: 1990 %>
-            
-            <%= f.label :introduction %>
-            <%= f.text_area :introduction %>
-            
-            <%= f.label :location %>
-            <%= f.text_field :location %>
-            
-            <%= f.label :website %>
-            <%= f.text_field :website %>
-            
-            <%= f.submit "Save Edits", class: "btn btn-large btn-primary" %>
-        <% end %>
-    </div>
-</div>
+<%= render 'form' %>
