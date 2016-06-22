@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <%= form_for(@user) do |f| %>
+            <%= render 'shared/error_messages', object: f.object %>
+            <%= f.label :name %>
+            <%= f.text_field :name, class: "form-control" %>
+            
+            <% if controller.controller_name == 'users' && controller.action_name == 'update' || 'edit' %>
+            
+              <%= f.label :birthday %>
+              <%= f.date_select :birthday, start_year: 1990, class: "form-control" %>
+              
+              <%= f.label :introduction %>
+              <%= f.text_area :introduction, class: "form-control" %>
+              
+              <%= f.label :location %>
+              <%= f.text_field :location, class: "form-control" %>
+              
+              <%= f.label :website %>
+              <%= f.text_field :website, class: "form-control" %>
+
+            <% end %>
+            
+            <%= f.label :email %>
+            <%= f.text_field :email, class: "form-control" %>
+            
+            <%= f.label :password %>
+            <%= f.password_field :password, class: "form-control" %>
+            
+            <%= f.label :password_confirmation, "Confirmation" %>
+            <%= f.password_field :password_confirmation, class: "form-control" %>
+            
+            <%= f.submit @submit, class: "btn btn-large btn-primary" %>
+        <% end %>
+    </div>
+</div>

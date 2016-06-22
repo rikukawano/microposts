@@ -10,10 +10,16 @@
         <a href="<%= followers_user_path(@user) %>">
           <%= @user.follower_users.count %> followers
         </a>
+
       </h1>
     </section>
   </aside>
   <div class="col-md-8">
+    <ol>Birthday: <%= @user.birthday %></ol>
+    <ol>Introduction: <%= @user.introduction %></ol>
+    <ol>Location: <%= @user.location%></ol>
+    <ol>Website: <%= @user.website %></ol>
+    <%= link_to "Edit", edit_user_path %>
     <%= render 'follow_form' if logged_in? %>
     <% if @user.microposts.any? %>
         <h3>Microposts (<%= @user.microposts.count %>)</h3>
