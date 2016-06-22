@@ -1,0 +1,9 @@
+<h1>Following Users</h1>
+
+<li id="followings-<%= @user.id %>">
+  <%= link_to gravatar_for(@user.follower_id, size: 50), following_users %>
+
+  <span class="user">
+    <%= link_to following_users.name, following_users %>
+  </span>
+</li>
