@@ -5,7 +5,7 @@
             <%= f.label :name %>
             <%= f.text_field :name, class: "form-control" %>
             
-            <% if controller.controller_name == 'users' && controller.action_name == 'edit' %>
+            <% if controller.controller_name == 'users' && controller.action_name == 'update' || 'edit' %>
             
               <%= f.label :birthday %>
               <%= f.date_select :birthday, start_year: 1990, class: "form-control" %>

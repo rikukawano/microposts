@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @submit = 'edit'
+    @submit = 'Update'
   end
   
   def update
