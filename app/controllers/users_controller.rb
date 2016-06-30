@@ -3,11 +3,7 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
   
   def show
-<<<<<<< HEAD
-    @user = User.find(params[:id])
     @microposts = @user.microposts.order(created_at: :desc)
-=======
->>>>>>> user-profile
   end
   
   def new
@@ -27,10 +23,12 @@ class UsersController < ApplicationController
   
   def followings
     @user = User.find(params[:id])
-    @followings = @user.following_users.order(created_at: :desc)
+    @users = @user.following_users.alphabetically
   end
   
   def followers
+    @user = User.find(params[:id])
+    @users = @user.follower_users.alphabetically
   end
 
   def edit
