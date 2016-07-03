@@ -1,24 +1,9 @@
 <div class="row">
   <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-        <a href="<%= followings_user_path(@user) %>">
-          <%= @user.following_users.count %> following
-        </a>
-        <a href="<%= followers_user_path(@user) %>">
-          <%= @user.follower_users.count %> followers
-        </a>
-
-      </h1>
-    </section>
+    <%= render 'user_info' %>
   </aside>
   <div class="col-md-8">
-    <ol>Birthday: <%= @user.birthday %></ol>
-    <ol>Introduction: <%= @user.introduction %></ol>
-    <ol>Location: <%= @user.location%></ol>
-    <ol>Website: <%= @user.website %></ol>
+
     <%= link_to "Edit", edit_user_path %>
     <%= render 'follow_form' if logged_in? %>
     <% if @user.microposts.any? %>
